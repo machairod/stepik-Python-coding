@@ -1,0 +1,11 @@
+# Считайте, что функция f(x) уже определена выше. Определять её отдельно не требуется.
+n=int(input())
+outdict={}
+levels=[]
+for i in range(n):
+    a=int(input())
+    levels.append(a)
+    if a not in outdict:
+    outdict[a]=f(a)
+for i in levels:
+    print(outdict[i])
