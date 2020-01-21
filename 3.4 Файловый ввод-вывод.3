@@ -1,0 +1,18 @@
+#Не забудьте заменить название файла-донора при запуске в IDE
+
+worklist=[]
+a0, a1, a2 = 0,0,0
+with open('dataset_3363_4.txt','r',encoding='utf-8') as infile:
+    for line in infile:
+        worklist.append([i for i in line.strip('\n').split(';')])
+for j in range(len(worklist)):
+    del worklist[j][0]
+    
+    worklist[j][0],worklist[j][1],worklist[j][2]= int(worklist[j][0]),int(worklist[j][1]),int(worklist[j][2])
+    y=((worklist[j][0]+worklist[j][1]+worklist[j][2])/3)
+    
+    a0=a0+worklist[j][0]
+    a1=a1+worklist[j][1]
+    a2=a2+worklist[j][2]
+    print(round(y,12)) 
+print(round(a0/len(worklist),12),round(a1/len(worklist),12),round(a2/len(worklist),12))
