@@ -1,0 +1,19 @@
+#не забудьте вставить правильное название файла ввода
+
+with open 'dataset.txt' as ouf:
+    dicta=(ouf.read()).lower().split()
+count=0
+item=''
+for i in range(len(dicta)):
+    if dicta.count(dicta[i])>count:
+        count=dicta.count(dicta[i])
+        item=dicta[i]
+        
+    elif dicta.count(dicta[i])==count:
+        if dicta[i]<item:
+            item=dicta[i]
+        else:continue
+        
+    else:continue
+    
+print(item,count)
