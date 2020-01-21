@@ -1,0 +1,36 @@
+games=int(input())
+lines=[]
+statistic={}
+for i in range(games):
+
+    #принимаем строки в промежуточный список
+    lines.append([i for i in input().strip('\"').split(';')])
+    lines[i][1]=int(lines[i][1])
+    lines[i][3]=int(lines[i][3])
+    
+    #проверяем и добавляем команды
+    statistic.setdefault(lines[i][0],[0,0,0,0,0])
+    statistic.setdefault(lines[i][2],[0,0,0,0,0])
+    
+    statistic[lines[i][0]][0]+=1 #обновлено кол-во игр
+    statistic[lines[i][2]][0]+=1
+    
+    if lines[i][1]==lines[i][3]:
+        statistic[lines[i][0]][2]+=1 #добавить ничью
+        statistic[lines[i][2]][2]+=1
+        statistic[lines[i][2]][4]+=1 #добавить голы
+        statistic[lines[i][0]][4]+=1
+        
+    elif lines[i][1]>lines[i][3]:
+        statistic[lines[i][0]][1]+=1 #добавить победу
+        statistic[lines[i][2]][3]+=1 #добавить поражение
+        statistic[lines[i][0]][4]+=3 #добавить очки
+        
+    else:
+        statistic[lines[i][0]][3]+=1 #добавить поражение
+        statistic[lines[i][2]][1]+=1 #добавить победу
+        statistic[lines[i][2]][4]+=3 #добавить голы
+        
+#выводим результат
+for key, value in statistic.items():
+    print(key+":", *value)
