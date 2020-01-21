@@ -1,0 +1,9 @@
+a=str(input())
+k=1
+for i in range(len(a)-1):
+    if a[i] != a[i+1]:
+        print(a[i]+str(k),end='') 
+        k=1
+    else:
+        k+=1
+print(a[len(a)-1]+str(k),end='')
