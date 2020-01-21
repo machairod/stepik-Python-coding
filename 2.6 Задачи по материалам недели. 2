@@ -1,0 +1,9 @@
+number=int(input())
+output=[]
+if number>1:
+    while len(output)<=number:
+        for i in range(1,number):
+            output=output+[i]*i
+    print(*output[0:number])
+else:
+    print(number)
