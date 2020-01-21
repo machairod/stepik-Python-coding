@@ -1,0 +1,10 @@
+lst=[int(i) for i in input().split()]
+x=int(input())
+if x in lst:
+
+    for l in range(len(lst)):
+        if lst[l] == x:
+            print (l,end=' ')
+            lst[l]='x'
+else:
+    print("Отсутствует")
