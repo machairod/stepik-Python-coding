@@ -1,0 +1,11 @@
+inmatrix=[]
+a=input()
+while a!='end':
+    inmatrix.append([int(i) for i in a.split()])
+    a=input()
+row=len(inmatrix)
+col=len(inmatrix[0])
+for i in range(0,row):
+    for j in range(0,col):
+        print(inmatrix[i-1][j]+inmatrix[i-row+1][j]+inmatrix[i][j-1]+inmatrix[i][j-col+1],end=' ')
+    print('')
