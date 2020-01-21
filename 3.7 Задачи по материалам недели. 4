@@ -1,0 +1,20 @@
+x,y=0,0
+count=int(input())
+def goturtle(command):
+    instr=[i for i in command.split()]
+    instr[1]=int(instr[1])
+    global x
+    global y
+    if instr[0] == 'север':
+        y+=instr[1]
+    if instr[0] == 'восток':
+        x+=instr[1]
+    if instr[0] == 'юг':
+        y-=instr[1]
+    if instr[0] == 'запад':
+        x-=instr[1]
+
+while count >0:
+    goturtle(input())
+    count-=1
+print(y,x)   
