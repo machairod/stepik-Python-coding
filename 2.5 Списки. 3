@@ -1,0 +1,6 @@
+points = [int(i) for i in input().split()]
+doubles = [point for point in points if (points.count(point)>1)]
+for i in range(len(doubles)-1, 0, -1):
+    if doubles.count(doubles[i])>1:
+        doubles.pop(i)
+print(*doubles, end=' ')
