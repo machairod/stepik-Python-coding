@@ -5,8 +5,7 @@ for i in range(games):
 
     #принимаем строки в промежуточный список
     lines.append([i for i in input().strip('\"').split(';')])
-    lines[i][1]=int(lines[i][1])
-    lines[i][3]=int(lines[i][3])
+    lines[i][1], lines[i][3]=int(lines[i][1]), int(lines[i][3])
     
     #проверяем и добавляем команды
     statistic.setdefault(lines[i][0],[0,0,0,0,0])
